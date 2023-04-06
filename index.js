@@ -9,6 +9,10 @@ const app = express();
 app.use(bodyParser.json());
 const port = parseInt(process.env.PORT, 10) || 3000;
 
+app.get('/', (req, res) => {
+  res.send('Hello, World!');
+});
+
 app.post('/sendmail', async (req, res) => {
   try {
     const mailer = new Mailer();
